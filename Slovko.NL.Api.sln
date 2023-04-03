@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33402.96
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Slovko.NL.Api", "Slovko.NL.Api\Slovko.NL.Api.csproj", "{E5D92721-20FF-4E69-A233-B0F1EE86F199}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PreparingShit", "PreparingShit\PreparingShit.csproj", "{35EBAF6C-4D67-426C-8EAF-E6E29576BF23}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E5D92721-20FF-4E69-A233-B0F1EE86F199}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5D92721-20FF-4E69-A233-B0F1EE86F199}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5D92721-20FF-4E69-A233-B0F1EE86F199}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5D92721-20FF-4E69-A233-B0F1EE86F199}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35EBAF6C-4D67-426C-8EAF-E6E29576BF23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35EBAF6C-4D67-426C-8EAF-E6E29576BF23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35EBAF6C-4D67-426C-8EAF-E6E29576BF23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35EBAF6C-4D67-426C-8EAF-E6E29576BF23}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CF52AE35-4019-4EDE-9C54-25153BAC540F}
+	EndGlobalSection
+EndGlobal
