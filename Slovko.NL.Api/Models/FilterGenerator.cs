@@ -7,21 +7,19 @@
 
     public static class FilterGenerator
     {
-        private const int WRONG = 0;
-        private const int PARTIAL_MATCH = 1;
-        private const int FULL_MATCH = 2;
-        private const int PENDING = 3;
 
-        private static readonly string[] RegexPattern = new string[] {
-        "[абвгґдеєжзиіїйклмнопрстуфхцчшщьюя]",
-        "[абвгґдеєжзиіїйклмнопрстуфхцчшщьюя]",
-        "[абвгґдеєжзиіїйклмнопрстуфхцчшщьюя]",
-        "[абвгґдеєжзиіїйклмнопрстуфхцчшщьюя]",
-        "[абвгґдеєжзиіїйклмнопрстуфхцчшщьюя]"
-    };
 
-        public static string  GenerateFilter(LetterGroup[] lettersStates)
+
+        public static string GenerateFilter(LetterGroup[] lettersStates)
         {
+            string[] RegexPattern = new string[] {
+                "[абвгґдеєжзиіїйклмнопрстуфхцчшщьюя]",
+                "[абвгґдеєжзиіїйклмнопрстуфхцчшщьюя]",
+                "[абвгґдеєжзиіїйклмнопрстуфхцчшщьюя]",
+                "[абвгґдеєжзиіїйклмнопрстуфхцчшщьюя]",
+                "[абвгґдеєжзиіїйклмнопрстуфхцчшщьюя]"
+            };
+
             var lettersMustContain = new List<string>();
 
             for (int i = 0; i < lettersStates.Length; i++)
