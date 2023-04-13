@@ -32,8 +32,13 @@ namespace Slovko.NL.Api.Services
         {
             var filter = FilterGenerator.GenerateFilter(lettersStates);
 
-            return await _context.Connection.QueryAsync<Word>(@$"SELECT * FROM fiveletterwords 
-                                                            WHERE value ~ '{filter}'");
+            //order by entropy
+
+
+            return await _context.Connection
+                .QueryAsync<Word>(@$"SELECT * FROM fiveletterwords 
+                                     WHERE value ~ '{filter}'
+                                     ORDER BY entropy DESC");
         }
     }
 }
