@@ -37,6 +37,10 @@
                                 RegexPattern[k] = RegexPattern[k].Replace(letter.Text, "");
                             }
                         }
+                        else
+                        {
+                            RegexPattern[j] = RegexPattern[j].Replace(letter.Text, "");
+                        }
                     }
                     else if (letter.State == (int)LetterState.PartialMatch)
                     {
