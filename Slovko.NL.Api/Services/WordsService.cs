@@ -35,10 +35,12 @@ namespace Slovko.NL.Api.Services
             //order by entropy
 
 
-            return await _context.Connection
+            var result = await _context.Connection
                 .QueryAsync<Word>(@$"SELECT * FROM fiveletterwords 
-                                     WHERE value ~ '{filter}'
+                                     WHERE value ~ '{filter.Item1}'
                                      ORDER BY entropy DESC");
+
+            return result.Where(x => filter.Item2.All(y => x.Value.Contains(y)));
         }
     }
 }

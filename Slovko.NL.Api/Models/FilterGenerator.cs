@@ -10,7 +10,7 @@
 
 
 
-        public static string GenerateFilter(LetterGroup[] lettersStates)
+        public static (string, List<string>) GenerateFilter(LetterGroup[] lettersStates)
         {
             string[] RegexPattern = new string[] {
                 "[абвгґдеєжзиіїйклмнопрстуфхцчшщьюя]",
@@ -55,7 +55,7 @@
                 }
             }
 
-            return string.Join("", RegexPattern);
+            return (string.Join("", RegexPattern), lettersMustContain);
         }
     }
 
