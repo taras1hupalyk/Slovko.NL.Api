@@ -10,7 +10,7 @@
 
 
 
-        public static (string, List<string>) GenerateFilter(LetterGroup[] lettersStates)
+        public static (string,  HashSet<string>) GenerateFilter(LetterGroup[] lettersStates)
         {
             string[] RegexPattern = new string[] {
                 "[абвгґдеєжзиіїйклмнопрстуфхцчшщьюя]",
@@ -20,8 +20,11 @@
                 "[абвгґдеєжзиіїйклмнопрстуфхцчшщьюя]"
             };
 
-            var lettersMustContain = new List<string>();
+            
+            // var lettersMustContain = new List<string>(); but for unique letters
+            var lettersMustContain = new HashSet<string>();
 
+            
             for (int i = 0; i < lettersStates.Length; i++)
             {
                 for (int j = 0; j < lettersStates[i].Letters.Length; j++)
