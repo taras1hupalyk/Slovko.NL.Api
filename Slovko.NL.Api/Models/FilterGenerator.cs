@@ -10,7 +10,7 @@
 
 
 
-        public static (string,  HashSet<string>) GenerateFilter(LetterGroup[] lettersStates)
+        public static (string, HashSet<string>) GenerateFilter(LetterGroup[] lettersStates)
         {
             string[] RegexPattern = new string[] {
                 "[абвгґдеєжзиіїйклмнопрстуфхцчшщьюя]",
@@ -20,11 +20,11 @@
                 "[абвгґдеєжзиіїйклмнопрстуфхцчшщьюя]"
             };
 
-            
+
             // var lettersMustContain = new List<string>(); but for unique letters
             var lettersMustContain = new HashSet<string>();
 
-            
+
             for (int i = 0; i < lettersStates.Length; i++)
             {
                 for (int j = 0; j < lettersStates[i].Letters.Length; j++)
@@ -33,17 +33,26 @@
 
                     if (letter.State == (int)LetterState.Wrong)
                     {
-                        if (!lettersMustContain.Contains(letter.Text))
+                        var toSkip = new List<int>();
+
+                        for (int k = 0; k < RegexPattern.Length; k++)
                         {
-                            for (int k = 0; k < RegexPattern.Length; k++)
+                            if (RegexPattern[k] == letter.Text)
                             {
-                                RegexPattern[k] = RegexPattern[k].Replace(letter.Text, "");
+                                toSkip.Add(k);
                             }
                         }
-                        else
+
+
+                        for (int k = 0; k < RegexPattern.Length; k++)
                         {
-                            RegexPattern[j] = RegexPattern[j].Replace(letter.Text, "");
+                            if (toSkip.Contains(k))
+                            {
+                                continue;
+                            }
+                            RegexPattern[k] = RegexPattern[k].Replace(letter.Text, "");
                         }
+
                     }
                     else if (letter.State == (int)LetterState.PartialMatch)
                     {
