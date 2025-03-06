@@ -1,15 +1,11 @@
-﻿namespace Slovko.NL.Api.Models
+﻿using Slovko.NL.Api.Enums;
+
+
+namespace Slovko.NL.Api.Models
 {
-    using Slovko.NL.Api.Enums;
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
 
     public static class FilterGenerator
     {
-
-
-
         public static (string, HashSet<string>) GenerateFilter(LetterGroup[] lettersStates)
         {
             string[] RegexPattern = new string[] {

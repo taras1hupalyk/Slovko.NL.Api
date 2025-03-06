@@ -1,5 +1,5 @@
-﻿using Npgsql;
-using System.Data;
+﻿using Microsoft.Data.Sqlite;
+using System.Text.RegularExpressions;
 
 namespace Slovko.NL.Api.DataAccess
 {
@@ -14,12 +14,19 @@ namespace Slovko.NL.Api.DataAccess
             _connectionString = _configuration.GetConnectionString("DefaultConnection");
         }
 
-        public IDbConnection Connection
+        public SqliteConnection Connection
         {
             get
             {
-                return new NpgsqlConnection(_connectionString);
+                var connection =  new SqliteConnection(_connectionString);
+                connection.CreateFunction(
+                "regexp",
+                (string pattern, string input)
+                    => Regex.IsMatch(input, pattern));
+
+                return connection;
             }
         }
     }
+
 }
