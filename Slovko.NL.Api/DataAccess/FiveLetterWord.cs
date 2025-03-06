@@ -2,16 +2,16 @@
 
 namespace Slovko.NL.Api.DataAccess
 {
-    [Table("fiveletterwords")]
-    public class Word
+    [Table("FiveLetterWord")]
+    public class FiveLetterWord
     {
-        [Column("id")]
+        [Column("Id")]
         public int Id { get; set; }
 
-        [Column("value")]
-        public string Value { get; set; }
+        [Column("Word")]
+        public string Word { get; set; }
 
-        [Column("entropy")]
+        [Column("Entropy")]
         public double Entropy { get; set; }
     }
 }

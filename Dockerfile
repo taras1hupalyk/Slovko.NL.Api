@@ -19,4 +19,6 @@ RUN dotnet publish "Slovko.NL.Api.csproj" -c Release -o /app/publish /p:UseAppHo
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
+COPY ["Slovko.NL.Api/Orfo.db", "/app"] 
 ENTRYPOINT ["dotnet", "Slovko.NL.Api.dll"]
+
